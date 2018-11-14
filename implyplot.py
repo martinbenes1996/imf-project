@@ -17,6 +17,29 @@ class Negator:
         for i in x:
             l.append( cls.godel(i) )
         return np.array(l)
+    @classmethod
+    def dualgodel(cls, x):
+        if isinstance(x, float) or isinstance(x, int):
+            if x == 1: return 0
+            else: return 1
+        l = []
+        for i in x:
+            l.append( cls.godel(i) )
+        return np.array(l)
+    sugencoef = 2
+    yagercoef = 2
+    @classmethod
+    def sugen(cls, x):
+        return (1 - x)/(1 + cls.sugencoef*x)
+    @classmethod
+    def yager(cls, x):
+        return (1 - x**cls.yagercoef)**(1/cls.yagercoef)
+    @classmethod
+    def setSugenCoef(cls, val):
+        cls.sugencoef = val
+    @classmethod
+    def setYagerCoef(cls, val):
+        cls.yagercoef = val
 
 class Implicator:
     @staticmethod
@@ -36,17 +59,19 @@ class Implicator:
             l.append(np.array(k))
         return np.array(l)
     @staticmethod
-    def reichenbach(x,y, negator=Negator.standard):
+    def lukasiewicz(x,y, negator=Negator.standard):
         return np.minimum(negator(x)+y, 1)
     @staticmethod
-    def lukasiewicz(x,y, negator=Negator.standard):
+    def reichenbach(x,y, negator=Negator.standard):
+        return negator(x) - y + x*y
+    @staticmethod
+    def wtf(z,y, negator=Negator.standard):
         l = []
-        for i,j in zip(negator(x),y):
+        for i,j in zip(x,y):
             k = []
             for m,n in zip(i,j):
-                if n==0: k.append( m )
-                elif m==1: k.append(  )
-                if min(m,n) == 0: k.append(max(m,n))
+                if n==0: k.append( negator(m) )
+                elif m==1: k.append( n )
                 else: k.append(1)
             l.append(np.array(k))
         return np.array(l)
@@ -64,3 +89,9 @@ def plotImplication(implicator=Implicator.maximum, negator=Negator.standard):
     ax.set_ylabel('y')
     ax.set_zlabel('z')
     fig.show()
+
+print("\033[1;33mWelcome to ImplyPlot!\033[0m")
+print("Type: \033[0;36mplotImplication(Implicator.\033[0;35m<implicator>\033[0;36m, Negator.\033[0;35m<negator>\033[0;36m)\033[0m")
+print("\033[0;35m<implicator>\033[0m: maximum, probsum, drastic, reichenbach, lukasiewicz")
+print("\033[0;35m<negator>\033[0m: standard, godel, dualgodel, sugen, yager")
+
