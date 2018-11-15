@@ -24,7 +24,7 @@ class Negator:
             else: return 1
         l = []
         for i in x:
-            l.append( cls.godel(i) )
+            l.append( cls.dualgodel(i) )
         return np.array(l)
     sugencoef = 2
     yagercoef = 2
@@ -88,6 +88,29 @@ def plotImplication(implicator=Implicator.maximum, negator=Negator.standard):
     ax.set_xlabel('x')
     ax.set_ylabel('y')
     ax.set_zlabel('z')
+    fig.show()
+
+def plotClassicImplication():
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    x = np.array([1,1,0,0])
+    y = np.array([1,0,1,0])
+    z = np.array([1,0,1,1])
+    ax.scatter(x,y,z)
+    plt.axis([x.max(), x.min(), y.min(), y.max()])
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_zlabel('z')
+    fig.show()
+
+def plotNegator(negator=Negator.standard):
+    x = np.linspace(0, 1, 50, endpoint=True)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    y = negator(x)
+    ax.plot(x, y)
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
     fig.show()
 
 print("\033[1;33mWelcome to ImplyPlot!\033[0m")
