@@ -108,7 +108,7 @@ def plotNegator(negator=Negator.standard):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     y = negator(x)
-    ax.plot(x, y)
+    ax.plot(x, y, color='magenta')
     ax.set_xlabel('x')
     ax.set_ylabel('y')
     fig.show()
