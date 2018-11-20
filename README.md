@@ -41,6 +41,8 @@ at the <negator> parameters. The parameter must be replaced by one of the follow
 * Negator.dualgodel
 * Negator.sugen
 * Negator.yager
+* Negator.circle
+* Negator.parabolic
 
 Sugen and Yager negator coefficients are defaultly 2. This might be set by methods:
 

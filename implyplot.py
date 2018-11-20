@@ -89,6 +89,22 @@ class Negator:
         """
         return (1 - x**cls.yagercoef)**(1/cls.yagercoef)
     
+    @staticmethod
+    def circle(x):
+        """
+        Circle negator.
+        @param Scalar or numpy array.
+        """
+        return np.sqrt(1 - np.square(x))
+
+    @staticmethod
+    def parabolic(x):
+        """
+        Parabolic negator.
+        @param Scalar or numpy array.
+        """
+        return 1 - np.square(x)
+    
 
 class Implicator:
     """
@@ -194,5 +210,5 @@ print("\033[0;36mplotImplication(Implicator.\033[0;35m<implicator>\033[0;36m, Ne
 print("\033[0;36mplotNegator(Negator.\033[0;35m<negator>\033[0;36m)\033[0m")
 print("\033[0;36mplotClassicImplication()\033[0m")
 print("\033[0;35m<implicator>\033[0m: maximum, probsum, drastic, lukasiewicz")
-print("\033[0;35m<negator>\033[0m: standard, godel, dualgodel, sugen, yager")
+print("\033[0;35m<negator>\033[0m: standard, godel, dualgodel, sugen, yager, circle, parabolic")
 
