@@ -5,6 +5,13 @@ It demonstrates fuzzy implication forms, it was done for educational
 purposes.
 
 # Usage #
+Library is written in Python3 and uses *numpy* and *matplotlib*. To run it,
+change directory to the main project file and type one of the following commands:
+
+* $ python3 -i implyplot.py
+* $ ./run.sh
+* $ make run
+
 There are three functions prepared for you:
 
 * plotImplication(<implicator>, <negator>)
