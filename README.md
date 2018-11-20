@@ -12,11 +12,14 @@ change directory to the main project file and type one of the following commands
 * $ ./run.sh
 * $ make run
 
-There are three functions prepared for you:
+All of them imports the library at Python3 interactive mode and then waits for the
+user input. There are three functions prepared for you:
 
 * plotImplication(<implicator>, <negator>)
 * plotNegator(<negator>)
 * plotClassicImplication()
+
+For more information, read the specific method documentation.
 
 ## Implicators ##
 There are 4 different implicator types implemented in the project. They are given to the plotter functions
