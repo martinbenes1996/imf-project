@@ -50,6 +50,6 @@ Sugen and Yager negator coefficients are defaultly 2. This might be set by metho
 For more information, read the specific method documentation.
 
 # Credits #
-Author: Martin Benes.
+Author of library: Martin Benes.
 
 
