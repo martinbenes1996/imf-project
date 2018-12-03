@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # generated space of plots
-Xdata, Ydata = np.meshgrid(np.linspace(0, 1, 50, endpoint=True), np.linspace(0, 1, 50, endpoint=True))
+Xdata, Ydata = np.meshgrid(np.linspace(0, 1, 25, endpoint=True), np.linspace(0, 1, 25, endpoint=True))
 
 
 class Negator:
