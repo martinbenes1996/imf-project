@@ -1,10 +1,11 @@
+# IMF project
 
-# Description #
+## Description
 Project ImplyPlot was done for subject Fuzzy Logic Foundations.
 It demonstrates fuzzy implication forms, it was done for educational
 purposes.
 
-# Usage #
+## Usage
 Library is written in Python3 and uses *numpy* and *matplotlib*. To run it,
 change directory to the main project file and type one of the following commands:
 
@@ -21,7 +22,7 @@ user input. There are three functions prepared for you:
 
 For more information, read the specific method documentation.
 
-## Implicators ##
+### Implicators
 There are 4 different implicator types implemented in the project. They are given to the plotter functions
 at the <implicator> parameters. The parameter must be replaced by one of the following method names:
 
@@ -32,7 +33,7 @@ at the <implicator> parameters. The parameter must be replaced by one of the fol
 
 For more information, read the specific method documentation.
 
-## Negators ##
+### Negators
 There are 5 different negator types implemented in the project. THey are given to the plotter functions
 at the <negator> parameters. The parameter must be replaced by one of the following method names:
 
@@ -51,7 +52,5 @@ Sugen and Yager negator coefficients are defaultly 2. This might be set by metho
 
 For more information, read the specific method documentation.
 
-# Credits #
-Author of library: Martin Benes.
 
 
